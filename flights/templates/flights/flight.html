@@ -1,0 +1,25 @@
+{%extends "flights/layout.html"%}
+{%block body%}
+   <h1>flight number :  {{flight.id}}</h1>
+<h4> from --- {{flight.origin}}</h4>
+<h4>   TO --- {{flight.destination}}</h4>
+<h4>  Duration ---  {{flight.duration}}</h4>
+<h1>Passangers</h1>
+{%for p in passanger%}
+<li>{{p.firstname}} {{p.lastname}}</li>
+{%empty%}
+<h4>Empty</h4>
+   {%endfor%}
+<a href="{%url 'index'%}">flights list</a>
+<h1>register for this flight</h1>
+<form action="{%url 'flights' flight.id%}" method="post">
+   {% csrf_token %}
+        <select name="passangers">
+            {%for p in non_passangers %}
+            <option value="{{p.id}}">{{p}}</option>
+        {%endfor%}
+        </select>
+        <input type="submit" value="click">
+        </div>
+</form>
+{%endblock%}
