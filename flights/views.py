@@ -17,7 +17,6 @@ def flights(request, flight_id):
         passanger.booking.add(flight)
 
 
-    for p in Passanger.objects.exclude(booking=flight).all():
     return render(request,'flights/flight.html',
                   { "flight": flight,
                     "passanger": flight.passanger.all(),
