@@ -1,11 +1,11 @@
 
 body{
-background:blue;
+background: blue;
+color: white;
 }
 
 div{
-width:50vw;
-height:50vh;
-background-color:red;
+width: 50vw;
+height: 50vh;
+background-color: red;
 }
-

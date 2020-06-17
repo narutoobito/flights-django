@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x5&3glzx@*m!tlhu_f+q$39&v2@@$0t9d4n3_yem^xqo_u(_#c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG=True
 
 ALLOWED_HOSTS = ['flights-naruto.herokuapp.com', '127.0.0.1']
 

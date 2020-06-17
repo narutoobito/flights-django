@@ -9,7 +9,11 @@ def index(request):
     })
 
 def flights(request, flight_id):
-    flight = Flight.objects.get(id=flight_id)
+    try:
+        flight = Flight.objects.get(id=flight_id)
+
+    except:
+        return render(request, 'flights/notfound.html')
 
     if request.method=='POST':
         id = int(request.POST["passangers"])
@@ -22,3 +26,4 @@ def flights(request, flight_id):
                     "passanger": flight.passanger.all(),
                      "non_passangers": Passanger.objects.exclude(booking=flight).all(),
                     })
+

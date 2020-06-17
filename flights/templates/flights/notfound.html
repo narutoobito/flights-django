@@ -1,0 +1,23 @@
+{%extends 'flights/layout.html'%}
+{%load static%}
+{% block body %}
+    <img src="{%static 'images/naruto.png'%}" style="display: inline-block; width:7em;" class="image1">
+    <img src="{%static 'images/madara.png'%}" style="display: inline-block; height:15em;" class="image2">
+    <div style="font-size:5em; display:inline-block; width:4em">PAGE NOT FOUND</div>
+
+<script>
+    image1=document.querySelector(".image1")
+    image2=document.querySelector(".image2")
+
+    no=Math.floor(Math.random()*10);
+    if(no>5){
+    image1.style.display="none"
+    image2.style.display="inline-block"
+    }
+    else{
+    image2.style.display="none"
+    image1.style.display="inline-block"
+    }
+</script>
+{% endblock %}
+
